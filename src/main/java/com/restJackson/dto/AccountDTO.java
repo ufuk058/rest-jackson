@@ -3,6 +3,7 @@ package com.restJackson.dto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(value={"city","state","age","postCode"}) //hide provided properties by the class level
+@JsonIgnoreProperties(value={"city","state","age"}) //hide provided properties by the class level
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountDTO {
 
     private String name;
