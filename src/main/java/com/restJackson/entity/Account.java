@@ -21,9 +21,7 @@ public class Account extends  BaseEntity {
     private String state;
     private String city;
     private Integer age;
-
-    @Column(name="postCode")
-    private String postalCode;
+    private String postCode;
 
     @OneToOne(mappedBy = "account")
     private User user;
