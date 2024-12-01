@@ -1,5 +1,6 @@
 package com.restJackson.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -17,8 +18,8 @@ public class AccountDTO {
     private String state;
     private String city;
     private int age;
-    @Column(name="postCode")
-    private String postalCode;
-    @OneToOne(mappedBy = "account")
+    private String postCode;
+
+    @JsonBackReference//this field is not going to be serialised
     private UserDTO user;
 }
